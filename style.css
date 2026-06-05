@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Heavitas';
+    src: url('Heavitas.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Relationship of mélodrame';
+    src: url('Relationship of mélodrame.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AlteHaasGroteskRegular';
+    src: url('AlteHaasGroteskRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AlteHaasGroteskBold';
+    src: url('AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'AlteHaasGroteskRegular', sans-serif;
+    background-color: #0A0A0A;
+    color: #EAEAEA;
+    margin: 0; 
+    
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+    font-family: 'Heavitas', sans-serif;
+    font-weight: bold;
+    color: #EAEAEA;
+}
+
+.Home {
+    width: 100%;            
+}
+
+h1[description="Name"] {
+    font-size: 6em;
+    line-height: 0.9;
+}
+
+h1[description="Role"] {
+    font-family: 'Relationship of mélodrame', serif; 
+    font-size: 6em;
+    margin-top: 0;
+    margin-right: -200px;
+    text-align: right;
+}
+
+.main-content {
+    max-width: 1200px;         
+    margin: 0;           
+    padding: 30px 60px 80px 60px;
+    box-sizing: border-box;
+}
+
+.navbar { 
+  display: flex;               
+  flex-direction: row;      
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 40px;                   
+  background-color: #0a0a0a99;   
+  padding: 20px 30px;          
+  position: fixed;
+  top: 0;
+  right: 0;                   
+  width: 100%;
+  box-sizing: border-box;             
+  z-index: 1000;               
+  border-bottom: 1px solid #0a0a0a99; 
+}
+
+.navbar a {
+    font-family: 'AlteHaasGroteskRegular', sans-serif;
+    color: #EAEAEA;              
+    font-size: 0.85rem;           
+    letter-spacing: 2px;         
+    margin: 0;                   
+    cursor: pointer;             
+    position: relative;          
+    padding-bottom: 6px;  
+    white-space: nowrap;         
+    text-decoration: none;      
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #EAEAEA;  
+    border-radius: 7px; 
+    transform: scaleX(0);        
+    transform-origin: bottom left;
+    transition: transform 0.40s ease-out; 
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);        
+}
