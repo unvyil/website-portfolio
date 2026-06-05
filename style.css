@@ -21,6 +21,30 @@
     src: url('AlteHaasGroteskBold.ttf') format('truetype');
 }
 
+@media (max-width: 768px) {
+    h1[description="Name"] {
+        font-size: 3em;
+    }
+    
+    h1[description="Role"] {
+        font-size: 3em;
+        margin-right: -50px;
+    }
+    
+    .main-content {
+        padding: 20px 30px 40px 30px;
+    }
+    
+    .navbar {
+        padding: 15px 20px;
+        gap: 20px;
+    }
+    
+    .navbar a {
+        font-size: 0.75rem;
+    }
+}
+
 body {
     font-family: 'AlteHaasGroteskRegular', sans-serif;
     background-color: #0A0A0A;
@@ -92,20 +116,8 @@ h1[description="Role"] {
     text-decoration: none;      
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background-color: #EAEAEA;  
-    border-radius: 7px; 
-    transform: scaleX(0);        
-    transform-origin: bottom left;
-    transition: transform 0.40s ease-out; 
-}
-
-.navbar a:hover::after {
-    transform: scaleX(1);        
+.navbar a:hover,
+.navbar a:active {
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+    color: #ff69bc;
 }
