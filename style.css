@@ -9,6 +9,8 @@
 @font-face {
     font-family: 'Relationship of mélodrame';
     src: url('Relationship of mélodrame.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
@@ -19,30 +21,6 @@
 @font-face {
     font-family: 'AlteHaasGroteskBold';
     src: url('AlteHaasGroteskBold.ttf') format('truetype');
-}
-
-@media (max-width: 768px) {
-    h1[description="Name"] {
-        font-size: 3em;
-    }
-    
-    h1[description="Role"] {
-        font-size: 3em;
-        margin-right: -50px;
-    }
-    
-    .main-content {
-        padding: 20px 30px 40px 30px;
-    }
-    
-    .navbar {
-        padding: 15px 20px;
-        gap: 20px;
-    }
-    
-    .navbar a {
-        font-size: 0.75rem;
-    }
 }
 
 body {
@@ -58,7 +36,6 @@ body {
 
 h1, h2, h3 {
     font-family: 'Heavitas', sans-serif;
-    font-weight: bold;
     color: #EAEAEA;
 }
 
@@ -74,11 +51,13 @@ h1[description="Name"] {
 
 h1[description="Role"] {
     font-family: 'Relationship of mélodrame', serif; 
+    font-weight: normal;
     font-size: 6em;
     margin-top: 0;
     margin-right: 0;
     text-align: right;
     line-height: 1.2;
+    -webkit-text-stroke: 0px;
 }
 
 .main-content {
@@ -95,7 +74,7 @@ h1[description="Role"] {
   align-items: center;
   gap: 40px;                   
   background-color: #0a0a0a99;   
-  padding: 20px 30px;          
+  padding: 20px 60px;
   position: fixed;
   top: 0;
   right: 0;                   
@@ -123,4 +102,28 @@ h1[description="Role"] {
 .navbar a:active {
     font-family: 'AlteHaasGroteskBold', sans-serif;
     color: #ff48ac;
+}
+
+@media (max-width: 768px) {
+    h1[description="Name"] {
+        font-size: 3em;
+    }
+    
+    h1[description="Role"] {
+        font-size: 3em;
+        margin-right: 0; 
+    }
+    
+    .main-content {
+        padding: 20px 30px 40px 30px; 
+    }
+    
+    .navbar {
+        padding: 15px 30px; 
+        gap: 20px;
+    }
+    
+    .navbar a {
+        font-size: 0.75rem;
+    }
 }
