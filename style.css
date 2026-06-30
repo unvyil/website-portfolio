@@ -176,8 +176,8 @@ h1[description="Role"] {
 }
 
 .qlty-card {
-    background-color: transparent; /* Remove solid background */
-    border: 2px solid #ff48ad;      /* Add colored border */
+    background-color: transparent; 
+    border: 2px solid #ff48ad; 
     border-radius: 12px;       
     padding: 35px 30px;
     flex: 1;                   
@@ -194,7 +194,7 @@ h1[description="Role"] {
     font-size: 1.6rem;
     margin-top: 0;
     margin-bottom: 15px;
-}}
+}
 
 .qlty-card p {
     font-family: 'AlteHaasGroteskRegular', sans-serif;
@@ -207,7 +207,6 @@ h1[description="Role"] {
 /* TECH STACK */
 .TechStack {
     display: grid;
-    /* Adjusted to a tighter grid for smaller cards */
     grid-template-columns: repeat(6, 1fr); 
     gap: 15px;
     margin-top: 30px;
@@ -217,7 +216,7 @@ h1[description="Role"] {
     background-color: #1A1A1A;
     border: 1px solid #333;
     border-radius: 12px;
-    aspect-ratio: 1 / 1; /* Forces the square shape */
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
