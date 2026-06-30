@@ -61,6 +61,7 @@ h1[description="Role"] {
     text-align: right;
     line-height: 1.2;
     -webkit-text-stroke: 0px;
+    color: #ff48ac;
 }
 
 .main-content {
@@ -146,6 +147,7 @@ h1[description="Role"] {
     color: #EAEAEA;
     max-width: 10000px;
     -webkit-text-stroke: 0px;
+    
 
 }
 
@@ -164,12 +166,87 @@ h1[description="Role"] {
     font-size: 1.05em;
 }
 
+.qlty-section {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    max-width: 1200px;
+}
 
+.qlty-card {
+    background-color: #ff48ad; 
+    border-radius: 12px;       
+    padding: 35px 30px;
+    flex: 1;                   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
 
+.qlty-card h3 {
+    font-family: 'Heavitas', serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #EAEAEA;
+}
 
-
+.qlty-card p {
+    font-family: 'AlteHaasGroteskRegular', sans-serif;
+    color: #EAEAEA;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
 
 /* TECH STACK */
+.TechStack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.TechStack .card {
+    background-color: #1A1A1A;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #EAEAEA;
+    font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+
 /* PROJECTS */
+.Projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.Projects .card {
+    background-color: #1A1A1A;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #333;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.Projects .card:hover {
+    transform: scale(1.02);
+    border-color: #ff48ac;
+}
+
 /* CONTACT */
 
