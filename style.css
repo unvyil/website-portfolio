@@ -176,7 +176,7 @@ h1[description="Role"] {
 }
 
 .qlty-card {
-    background-color: #ff48ad; 
+    background-color: #ff48ad67; 
     border-radius: 12px;       
     padding: 35px 30px;
     flex: 1;                   
@@ -221,6 +221,7 @@ h1[description="Role"] {
     align-items: center;
     color: #EAEAEA;
     font-family: 'AlteHaasGroteskBold', sans-serif;
+    aspect-ratio: 1 / 1; 
 }
 
 /* PROJECTS */
