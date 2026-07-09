@@ -610,23 +610,25 @@ footer {
   .hero-bottom-row {
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
+    width: 100%;
   }
 
-  .hero-right {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    gap: 1rem;
+  .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
 
   .hero-title {
-    font-size: clamp(4.5rem, 8vw, 5.5rem) !important;
+    font-size: 3.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem !important;
   }
 
   .portrait-placeholder {
-    max-width: 350px;
-    height: auto;
+    max-width: 250px;
   }
 }
 
