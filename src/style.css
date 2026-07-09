@@ -104,8 +104,8 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-top: 80px;
+  align-items: flex-start;
+  padding-top: 40px;
 }
 
 .hero-content {
