@@ -239,6 +239,7 @@ nav {
   width: 150%;
   height: auto;
   display: block;
+  image-rendering: crisp-edges;
 }
 
 .section {
