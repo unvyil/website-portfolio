@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/images/:path*", "destination": "/images/:path*" },
+    { "source": "/fonts/:path*", "destination": "/fonts/:path*" },
+    { "source": "/", "destination": "/src/index.html" },
+    { "source": "/(.*)", "destination": "/src/$1" }
+  ]
+}
