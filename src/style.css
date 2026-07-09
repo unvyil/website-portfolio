@@ -236,7 +236,7 @@ nav {
   image-rendering: crisp-edges;
 }
 
-.section {
+.section .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
