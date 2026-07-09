@@ -606,25 +606,41 @@ footer {
 /* ======================================================================= */
 /*                      TABLET / IPAD RESPONSIVENESS                       */
 /* ======================================================================= */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
+  .hero-title {
+    font-size: 4rem !important;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 2.2rem !important;
+  }
+
   .hero-bottom-row {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    gap: 1.5rem; 
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
 
   .hero-right {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
     gap: 1rem;
+    width: 100%;
   }
 
-  .hero-title {
-    font-size: clamp(3rem, 8vw, 5rem); 
+  .hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
   }
 
   .portrait-placeholder {
-    max-width: 320px; 
+    max-width: 100%;
     height: auto;
   }
 }
