@@ -602,3 +602,48 @@ footer {
     height: 330px;
   }
 }
+
+/* ======================================================================= */
+/*                      TABLET / IPAD RESPONSIVENESS                       */
+/* ======================================================================= */
+@media screen and (max-width: 1024px) {
+  .hero-bottom-row {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .portrait-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin-top: 2rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-img-placeholder {
+    height: 250px;
+  }
+}
+
+/* ======================================================================= */
+/*                      MOBILE PHONE RESPONSIVENESS                        */
+/* ======================================================================= */
+@media screen and (max-width: 768px) {
+  .portrait-placeholder {
+    height: 300px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img-placeholder {
+    height: 220px;
+  }
+}
