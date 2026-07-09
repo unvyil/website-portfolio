@@ -237,16 +237,14 @@ nav {
 }
 
 .section {
-  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .section-title {
-  font-family: "Gobitta", serif;
-  color: #ff006e;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  font-weight: normal;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 /* ==========================================================================
