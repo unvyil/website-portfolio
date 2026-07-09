@@ -20,7 +20,6 @@
 
 /* Base Styles */
 * {
-  outline: 1px solid red !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -626,14 +625,14 @@ footer {
 /* ======================================================================= */
 /*                      TABLET / IPAD RESPONSIVENESS                       */
 /* ======================================================================= */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
   .hero {
     padding-top: 60px;
     padding-bottom: 30px;
   }
 
   .hero-content {
-    flex-direction: row;
+    flex-direction: row; /* Ensure it stays side-by-side like desktop */
     align-items: center;
     gap: 2rem;
   }
@@ -644,24 +643,23 @@ footer {
   }
 }
 
-  .hero-subtitle {
-    font-size: clamp(2rem, 3vw, 2.5rem) !important;
-  }
-  .hero-image {
-    flex: 0 0 250px;
-  }
+.hero-subtitle {
+  font-size: clamp(2rem, 3vw, 2.5rem) !important;
+}
+.hero-image {
+  flex: 0 0 250px;
+}
 
-  .portrait-placeholder {
-    max-width: 200px;
-  }
+.portrait-placeholder {
+  max-width: 200px;
+}
 
-  .hero-right {
-    gap: 0.5rem;
-  }
+.hero-right {
+  gap: 0.5rem;
+}
 
-  .section {
-    padding: 1.5rem 0;
-  }
+.section {
+  padding: 1.5rem 0;
 }
 
 /* ======================================================================= */
