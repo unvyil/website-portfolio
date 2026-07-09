@@ -1,22 +1,22 @@
 /* Custom Fonts */
 @font-face {
   font-family: "Alte Haas Grotesk";
-  src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  src: url("../fonts/AlteHaasGroteskRegular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Alte Haas Grotesk";
-  src: url("fonts/AlteHaasGroteskBold.ttf") format("truetype");
+  src: url("../fonts/AlteHaasGroteskBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Gobitta";
-  src: url("fonts/GobittaRegular-0vBZ4.otf") format("onetype");
+  src: url("../fonts/GobittaRegular-0vBZ4.otf") format("opentype");
 }
 
 @font-face {
   font-family: "La Isla Tortuga";
-  src: url("fonts/LaIslaTortuga.otf") format("onetype");
+  src: url("../fonts/La Isla Tortuga.otf") format("opentype");
 }
 
 /* Base Styles */
@@ -31,9 +31,9 @@ html {
 }
 
 body {
-  font-family: "Alte Haas Grotesk", sans-serif;
-  background-color: #fafafa;
-  color: #1a1a1a;
+  font-family: "Alte Haas Grotesk Bold", sans-serif;
+  background-color: #171717;
+  color: #ff006e;
   line-height: 1.6;
 }
 
@@ -54,14 +54,19 @@ ul {
 
 /* Navigation */
 nav {
+  font-family: "Gobitta", serif;
+  color: #fafdea;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(250, 250, 250, 0.95);
+  background-color: transparent;
   backdrop-filter: blur(5px);
-  z-index: 1000;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #eaeaea;
+  z-index: 1100;
+  padding: 1.7rem 0;
+
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .nav-content {
@@ -72,15 +77,18 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 4rem;
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-}
 
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .nav-links a:hover {
-  color: #e63946;
+  color: #ff006e;
   transition: color 0.2s;
 }
 
@@ -113,67 +121,91 @@ nav {
 
 .hero-title {
   font-family: "La Isla Tortuga", cursive;
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1.1;
+  font-size: clamp(11rem, 9vw, 9rem);
+  line-height: 1;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #fafdea;
+  white-space: nowrap;
+  margin-bottom: -1rem;
+
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-subtitle {
   font-family: "Gobitta", serif;
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: normal;
-  color: #e63946;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  color: #ff006e;
+  line-height: 0.85;
+  margin-bottom: 3rem;
+}
+
+.hero-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  max-width: 600px;
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-family: "Gobitta", serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #dbff49;
+  margin-bottom: 0.8rem;
+
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .social-links {
   display: flex;
-  gap: 1.2rem;
-  margin-bottom: 2.5rem;
+  gap: 0.8rem;
 }
 
 .social-links a {
-  font-size: 1.8rem;
-  color: #1a1a1a;
-  transition: transform 0.2s;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: color 0.5s ease;
 }
 
 .social-links a:hover {
-  color: #e63946;
-  transform: translateY(-3px);
+  color: #dbff49;
 }
 
-.btn-group {
+.hero-right {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .btn {
+  font-family: "Gobitta", serif;
+  font-weight: 400;
+  line-height: 1.5;
   display: inline-block;
-  padding: 0.8rem 2rem;
-  border: 2px solid #e63946;
-  border-radius: 30px;
-  color: #e63946;
-  font-weight: 600;
-  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #ff006e;
+  border-radius: 10px;
+  color: #ff006e;
+  font-weight: bold;
   font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
   background: transparent;
+
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .btn:hover {
-  background-color: #e63946;
-  color: #fff;
+  /* background-color: #ff006e; */
+  color: #fafdea;
 }
 
 .hero-image {
@@ -183,28 +215,31 @@ nav {
   align-items: center;
 }
 
-.portrait-placeholder {
-  width: 300px;
-  height: 400px;
-  background-color: #eaeaea;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-weight: bold;
-  border: 3px solid #1a1a1a;
-  box-shadow: 12px 12px 0 #e63946;
+.placeholder {
+  background-color: transparent;
 }
 
-/* General Sections */
+.portrait-placeholder {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-placeholder img {
+  width: 150%;
+  height: auto;
+  display: block;
+}
+
 .section {
   padding: 5rem 0;
 }
 
 .section-title {
   font-family: "Gobitta", serif;
-  color: #e63946;
+  color: #ff006e;
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -235,14 +270,14 @@ nav {
   font-weight: 600;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #fafdea;
+  border: 1px solid #fafdea;
 }
 
 /* Timeline */
 .experience-timeline {
   max-width: 800px;
-  border-left: 2px solid #e63946;
+  border-left: 2px solid #ff006e;
   padding-left: 2rem;
   margin-left: 1rem;
 }
@@ -263,15 +298,15 @@ nav {
   top: 5px;
   width: 12px;
   height: 12px;
-  background-color: #fafafa;
-  border: 3px solid #e63946;
+  background-color: #fafdea;
+  border: 3px solid #ff006e;
   border-radius: 50%;
 }
 
 .timeline-year {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #e63946;
+  color: #ff006e;
   margin-bottom: 0.2rem;
 }
 
@@ -290,7 +325,7 @@ nav {
 .timeline-duration {
   color: #666;
   font-size: 0.85rem;
-  background-color: #eee;
+  background-color: #fafdea;
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
 }
@@ -314,8 +349,8 @@ nav {
 }
 
 .project-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #fafdea;
+  border: 1px solid #fafdea;
   border-radius: 8px;
   overflow: hidden;
   transition:
@@ -331,7 +366,7 @@ nav {
 
 .project-img-placeholder {
   height: 220px;
-  background-color: #f5f5f5;
+  background-color: #fafdea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -394,16 +429,16 @@ nav {
 
 .form-control {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #fafdea;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #fafdea;
   font-family: inherit;
   font-size: 1rem;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #1a1a1a;
+  border-color: #171717;
 }
 
 textarea.form-control {
@@ -413,7 +448,7 @@ textarea.form-control {
 
 .submit-btn {
   align-self: flex-start;
-  background-color: #1a1a1a;
+  background-color: #171717;
   color: #fff;
   border: none;
   padding: 0.8rem 2rem;
@@ -424,14 +459,14 @@ textarea.form-control {
 }
 
 .submit-btn:hover {
-  background-color: #e63946;
+  background-color: #ff006e;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 3rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #fafdea;
   margin-top: 4rem;
   position: relative;
   color: #666;
@@ -442,7 +477,7 @@ footer {
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #1a1a1a;
+  background-color: #171717;
   color: #fff;
   width: 40px;
   height: 40px;
@@ -454,7 +489,7 @@ footer {
 }
 
 .scroll-top:hover {
-  background-color: #e63946;
+  background-color: #ff006e;
 }
 
 /* Responsive */
