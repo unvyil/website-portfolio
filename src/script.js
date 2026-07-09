@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === 1. Contact Form Submission ===
+  /* ==========================================================================
+                                 CONTACTS
+========================================================================== 
+*/
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -21,14 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === 2. Auto Highlight Nav Links on Scroll ===
+  /* ==========================================================================
+                                NAVIGATION
+========================================================================== 
+*/
   const sections = document.querySelectorAll(".hero, .section");
   const navLinks = document.querySelectorAll(".nav-links a");
 
   if (sections.length && navLinks.length) {
     const observerOptions = {
       root: null,
-      // Shifts viewport check bounds to match screen-center focal visibility
       rootMargin: "-30% 0px -50% 0px",
       threshold: 0,
     };
@@ -50,5 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     sections.forEach((section) => observer.observe(section));
+  }
+
+  /* ==========================================================================
+                            FOOTER / UTILITIES
+========================================================================== 
+*/
+  const scrollTopBtn = document.querySelector(".scroll-top");
+
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    });
   }
 });
