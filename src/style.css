@@ -609,25 +609,23 @@ footer {
 @media screen and (max-width: 1024px) {
   .hero-bottom-row {
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    align-items: flex-start; 
+    gap: 1.5rem; 
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 5rem); 
   }
 
   .portrait-placeholder {
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-    margin-top: 2rem;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .project-img-placeholder {
-    height: 250px;
+    max-width: 320px; 
+    height: auto;
   }
 }
 
