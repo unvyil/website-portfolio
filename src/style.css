@@ -86,9 +86,18 @@ nav {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.nav-links a:hover {
+
+/* Base anchor styles - handles smooth transition color changes */
+.nav-links a {
+  color: inherit; /* Keeps your #fafdea base color */
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+/* Matches hover highlight state with active scrolling state */
+.nav-links a:hover,
+.nav-links a.active {
   color: #ff006e;
-  transition: color 0.2s;
 }
 
 /* Hero Section */
