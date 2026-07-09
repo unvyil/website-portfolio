@@ -20,6 +20,7 @@
 
 /* Base Styles */
 * {
+  outline: 1px solid red !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -107,10 +108,11 @@ nav {
 ========================================================================== 
 */
 .hero {
-  min-height: 100vh;
+  min-height: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
   display: flex;
-  align-items: flex-start;
-  padding-top: 120px;
+  align-items: center;
 }
 
 .hero-content {
@@ -626,20 +628,25 @@ footer {
 /* ======================================================================= */
 @media screen and (max-width: 1024px) {
   .hero {
-    padding-top: 80px;
+    padding-top: 60px;
+    padding-bottom: 30px;
   }
 
   .hero-content {
+    flex-direction: row;
+    align-items: center;
     gap: 2rem;
   }
 
   .hero-title {
-    font-size: clamp(6rem, 8vw, 8rem) !important;
+    font-size: 5rem !important;
+    line-height: 0.9;
   }
 
   .hero-subtitle {
     font-size: clamp(2rem, 3vw, 2.5rem) !important;
   }
+
   .hero-image {
     flex: 0 0 250px;
   }
