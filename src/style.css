@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "La Isla Tortuga";
-  src: url("/fonts/La Isla Tortuga.otf") format("opentype");
+  src: url("/fonts/La%20Isla%20Tortuga.otf") format("opentype");
 }
 
 /* Base Styles */
