@@ -606,7 +606,7 @@ footer {
 /* ======================================================================= */
 /*                      TABLET / IPAD RESPONSIVENESS                       */
 /* ======================================================================= */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1024px) {
   .hero {
     padding-top: 80px;
   }
