@@ -197,7 +197,7 @@ nav {
 }
 
 .hero + .section {
-  padding-top: 0.5rem;
+  padding-top: 0.3rem;
 }
 
 /* --- Download Buttons --- */
@@ -261,7 +261,7 @@ nav {
 }
 
 .section {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
 }
 
 .about-text,
