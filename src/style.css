@@ -20,6 +20,7 @@
 
 /* Base Styles */
 * {
+  outline: 1px solid red !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -107,11 +108,10 @@ nav {
 ========================================================================== 
 */
 .hero {
-  min-height: auto;
-  padding-top: 100px;
-  padding-bottom: 50px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 120px;
 }
 
 .hero-content {
@@ -625,41 +625,33 @@ footer {
 /* ======================================================================= */
 /*                      TABLET / IPAD RESPONSIVENESS                       */
 /* ======================================================================= */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1024px) {
   .hero {
-    padding-top: 60px;
-    padding-bottom: 30px;
+    padding-top: 80px;
   }
 
   .hero-content {
-    flex-direction: row; /* Ensure it stays side-by-side like desktop */
-    align-items: center;
     gap: 2rem;
   }
 
   .hero-title {
-    font-size: 5rem !important;
-    line-height: 0.9;
+    font-size: clamp(6rem, 8vw, 8rem) !important;
   }
-}
 
-.hero-subtitle {
-  font-size: clamp(2rem, 3vw, 2.5rem) !important;
-}
-.hero-image {
-  flex: 0 0 250px;
-}
+  .hero-subtitle {
+    font-size: clamp(2rem, 3vw, 2.5rem) !important;
+  }
+  .hero-image {
+    flex: 0 0 250px;
+  }
 
-.portrait-placeholder {
-  max-width: 200px;
-}
+  .portrait-placeholder {
+    max-width: 200px;
+  }
 
-.hero-right {
-  gap: 0.5rem;
-}
-
-.section {
-  padding: 1.5rem 0;
+  .hero-right {
+    gap: 0.5rem;
+  }
 }
 
 /* ======================================================================= */
