@@ -540,6 +540,9 @@ footer {
   right: 2rem;
   bottom: 2rem;
   z-index: 1000;
+  .scroll-top {
+    transition: all 0.3s ease;
+  }
 
   /* Hidden State */
   opacity: 0;

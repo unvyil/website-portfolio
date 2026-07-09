@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================================================
-                            FOOTER / UTILITIES
+                          FOOTER / UTILITIES
 ========================================================================== 
 */
   const scrollTopBtn = document.querySelector(".scroll-top");
@@ -70,6 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         scrollTopBtn.classList.remove("show");
       }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      scrollTopBtn.classList.remove("show");
     });
   }
 });
