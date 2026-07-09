@@ -608,10 +608,23 @@ footer {
 /* ======================================================================= */
 @media screen and (max-width: 1180px) {
   .hero-bottom-row {
+    display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
     width: 100%;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 0 0 auto;
+  }
+
+  .hero-image {
+    flex: 0 0 300px;
   }
 
   .btn {
