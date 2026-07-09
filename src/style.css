@@ -23,8 +23,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -195,6 +196,10 @@ nav {
   gap: 0.8rem;
 }
 
+.hero + .section {
+  padding-top: 0.5rem;
+}
+
 /* --- Download Buttons --- */
 .btn {
   font-family: "Gobitta", serif;
@@ -256,13 +261,26 @@ nav {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
+}
+
+.about-text,
+.tech-tools,
+.experience-timeline {
+  margin-bottom: 2rem !important;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 .section-title {
   font-family: "Gobitta", serif;
   color: #ff006e;
-  font-size: 2.5rem;
+
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 2rem;
   text-transform: uppercase;
   font-weight: normal;
@@ -606,7 +624,7 @@ footer {
 /* ======================================================================= */
 /*                      TABLET / IPAD RESPONSIVENESS                       */
 /* ======================================================================= */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   .hero {
     padding-top: 80px;
   }
@@ -616,13 +634,12 @@ footer {
   }
 
   .hero-title {
-    font-size: 6rem !important;
+    font-size: clamp(6rem, 8vw, 8rem) !important;
   }
 
   .hero-subtitle {
-    font-size: 2.5rem !important;
+    font-size: clamp(2rem, 3vw, 2.5rem) !important;
   }
-
   .hero-image {
     flex: 0 0 250px;
   }
