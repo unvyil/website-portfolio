@@ -504,6 +504,7 @@ nav {
 }
 
 .timeline-company {
+  font-family: "Alte Haas Grotesk";
   text-transform: uppercase;
 }
 
@@ -613,6 +614,7 @@ nav {
 }
 
 .project-type {
+  font-family: "Alte Haas Grotesk";
   font-size: clamp(0.75rem, 0.9vw, 0.85rem);
   font-weight: 600;
   letter-spacing: 1.5px;
