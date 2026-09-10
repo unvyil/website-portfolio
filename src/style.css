@@ -66,17 +66,26 @@
   padding-top: 1.5rem !important;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-dark, #171717);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--bg-dark);
-  color: var(--text-cream);
-  line-height: 1.6;
-  overflow-x: hidden;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .main-content, #contacts {
+  flex: 1 0 auto;
 }
 
 a {
@@ -105,9 +114,12 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(23, 23, 23, 0.75);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0.85) 0%, rgba(23, 23, 23, 0.4) 50%, transparent 100%) !important;
+  border-bottom: none;
   z-index: 1200;
   padding: 1.3rem 0;
 }
@@ -782,20 +794,23 @@ textarea.form-underline-input {
                                   FOOTER
 ========================================================================== */
 .footer-bar {
-  background-color: var(--text-cream);
-  color: #171717;
-  padding: 1.25rem 0;
-  margin-top: clamp(4rem, 7vw, 7rem);
   width: 100%;
-  font-family: var(--font-display);
+  background-color: var(--text-cream, #FAFDEA);
+  color: #5e5e5ec9;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 0;
 }
 
-.footer-content {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 4.5rem);
-  text-align: left;
+.footer-content p {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #5e5e5ec9;
 }
 
 .footer-content p {
