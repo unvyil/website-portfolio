@@ -43,7 +43,6 @@
   --font-heading: "La Isla Tortuga", cursive;
   --font-display: "Gobitta", serif;
   --font-body: "Alte Haas Grotesk", sans-serif;
-  --text-cream: "Alte Haas Grotesk", sans-serif;
 }
 
 * {
@@ -524,7 +523,7 @@ nav {
 }
 
 .timeline-desc {
-  color: var(--text-cream);
+  color: var(--font-body);
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   line-height: 1.7;
   max-width: 1050px;
