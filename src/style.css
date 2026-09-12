@@ -67,15 +67,11 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: var(--bg-dark, #171717);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -103,6 +99,26 @@ ul {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+}
+
+/* ==========================================================================
+                            CURSOR EFFECT
+========================================================================== */
+.stained-glass-cursor {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+}
+
+/* Optional: Hide standard system cursor on interactive controls */
+a, button, .project-card, .tech-card, .submit-btn, .btn-view-all {
+  cursor: none;
 }
 
 /* ==========================================================================
@@ -539,8 +555,6 @@ nav {
   gap: clamp(1.5rem, 3vw, 3rem);
   margin-bottom: clamp(3rem, 5vw, 4.5rem);
   width: 100%;
-  
-  /* Add these two lines to stop the cards from hitting the edges */
   max-width: 1200px; 
   margin: 0 auto; 
 }
@@ -578,16 +592,11 @@ nav {
   bottom: 0;
   left: 0;
   right: 0;
-  
-  /* We increased the top padding to 6rem to stretch the gradient WAY up the card */
   padding: 6rem 1.5rem 1.5rem 1.5rem; 
-  
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 100%);
-  
   z-index: 2;
   transition: background 0.4s ease-in-out;
 }
@@ -621,7 +630,6 @@ nav {
   letter-spacing: 1.5px;
   color: var(--text-cream); 
   text-transform: uppercase;
-  
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
@@ -633,7 +641,6 @@ nav {
   color: #ffffff;
   text-transform: uppercase;
   margin: 0;
-  
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9); 
 }
 
