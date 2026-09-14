@@ -1,0 +1,83 @@
+/* ==========================================================================
+   TECH & TOOLS GRID
+   Card grid with hover reveal overlay for the skills/tech section.
+========================================================================== */
+.tech-tools-wrapper {
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.tech-heading {
+  color: var(--accent-lime) !important;
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  margin-bottom: 2.2rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: clamp(0.9rem, 1.6vw, 1.6rem);
+}
+
+.tech-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: var(--text-cream);
+  border-radius: clamp(16px, 1.8vw, 24px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.tech-card img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  transition: opacity 0.4s ease-in-out;
+  mix-blend-mode: multiply;
+}
+
+.tech-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(23, 23, 23, 0.78);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: clamp(16px, 1.8vw, 24px);
+  transition: opacity 0.4s ease-in-out;
+  pointer-events: none;
+  padding: 0.5rem;
+}
+
+.tech-name {
+  color: var(--text-cream);
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.tech-card:hover,
+.tech-card:focus-visible {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.tech-card:hover img,
+.tech-card:focus-visible img {
+  opacity: 0.25;
+}
+
+.tech-card:hover .tech-overlay,
+.tech-card:focus-visible .tech-overlay {
+  opacity: 1;
+}

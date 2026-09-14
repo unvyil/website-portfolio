@@ -1,0 +1,173 @@
+/* ==========================================================================
+   PROJECTS SECTION
+   2-column card grid with image overlay, tags, and view-all button.
+========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  background-color: var(--card-slate);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: filter 0.4s ease-in-out;
+}
+
+.project-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.4) 45%,
+    transparent 100%
+  );
+  z-index: 2;
+  transition: background 0.4s ease-in-out;
+}
+
+.project-card:hover .project-card-overlay,
+.project-card:focus-visible .project-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    transparent 100%
+  );
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover img,
+.project-card:focus-visible img {
+  filter: brightness(0.7);
+}
+
+.project-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.project-type {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-cream);
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.project-name {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.project-arrow {
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.4s ease-in-out,
+    color 0.4s ease-in-out;
+}
+
+.project-card:hover .project-arrow,
+.project-card:focus-visible .project-arrow {
+  transform: translate(3px, -3px);
+  color: var(--accent-lime);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.tech-tag {
+  background-color: var(--accent-lime);
+  color: var(--bg-dark);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.btn-view-all {
+  font-family: var(--font-display);
+  color: var(--accent-pink);
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2.4px solid var(--accent-pink);
+  border-radius: 9999px;
+  padding: 0.7rem 2.6rem;
+  transition: all 0.4s ease-in-out;
+  background: transparent;
+}
+
+.btn-view-all:hover {
+  background-color: var(--accent-pink);
+  color: var(--text-cream);
+  box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
+  transform: translateY(-2px);
+}

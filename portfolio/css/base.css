@@ -1,0 +1,146 @@
+/* ==========================================================================
+   BASE & RESET  —  src/css/base.css
+   Custom fonts, CSS design tokens, global reset, and utility container.
+========================================================================== */
+
+/* ── Custom Fonts ─────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Alte Haas Grotesk";
+  src: url("../fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alte Haas Grotesk";
+  src: url("../fonts/AlteHaasGroteskBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gobitta";
+  src: url("../fonts/GobittaRegular-0vBZ4.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "La Isla Tortuga";
+  src:
+    url("../fonts/LaIslaTortuga.woff") format("woff"),
+    url("../fonts/LaIslaTortuga.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chunko Bold Demo";
+  src:
+    url("../fonts/chunko-bold-demo/Chunko Bold Demo.otf") format("opentype"),
+    url("../fonts/Chunko Bold Demo.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Design Tokens ────────────────────────────────────────────────────── */
+:root {
+  --bg-dark: #171717;
+  --text-cream: #fafdea;
+  --accent-pink: #ff006e;
+  --accent-lime: #dbff49;
+  --card-slate: #595b56;
+  --card-slate-hover: #41423e;
+  --font-hero-name: "Chunko Bold Demo", "Bangers", "La Isla Tortuga", cursive;
+  --font-heading: "La Isla Tortuga", cursive;
+  --font-display: "Alte Haas Grotesk", sans-serif;
+  --font-body: "Alte Haas Grotesk", sans-serif;
+  --ticker-speed: 38s;
+  --ticker-h: 56px;
+}
+
+/* ── Global Reset ─────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-dark, #171717);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main,
+.main-content,
+#contacts {
+  flex: 1 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Section spacing overrides ────────────────────────────────────────── */
+#about {
+  padding-bottom: 1.5rem !important;
+}
+#projects {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+#contacts {
+  padding-top: 1.5rem !important;
+}
+
+/* ── Responsive container ─────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+}
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLL RESETS
+   Required when using Lenis v1.1.x alongside GSAP ScrollTrigger.
+   Prevents height / overflow conflicts with the smooth-scroll wrapper.
+========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

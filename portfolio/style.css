@@ -1,0 +1,30 @@
+/* ==========================================================================
+   MAIN STYLESHEET — Import Manifest
+   All component styles live in src/css/. Edit those files, not this one.
+
+   Load order:
+     1. base       — fonts, design tokens, reset, .container
+     2. cursor     — canvas stained-glass overlay
+     3. hero       — full-viewport hero (name bg, portrait, anchors, ticker)
+     4. about      — about section + shared .section / .section-title
+     5. tech-tools — skill card grid
+     6. experience — work experience timeline
+     7. projects   — project card grid
+     8. contact    — contact form
+     9. footer     — footer bar
+    10. scroll-top — floating back-to-top button
+    11. responsive — all @media queries (must be last)
+========================================================================== */
+
+@import "src/css/base.css";
+@import "src/css/nav.css";
+@import "src/css/hero.css";
+@import "src/css/about.css";
+@import "src/css/tech-tools.css";
+@import "src/css/experience.css";
+@import "src/css/projects.css";
+@import "src/css/contact.css";
+@import "src/css/footer.css";
+@import "src/css/cursor.css";
+@import "src/css/scroll-top.css";
+@import "src/css/responsive.css";

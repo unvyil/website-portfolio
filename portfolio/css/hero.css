@@ -1,0 +1,395 @@
+/* ==========================================================================
+   HERO SECTION  —  src/css/hero.css
+   Modern CSS Grid Overlap Layout (No position: absolute used)
+========================================================================== */
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ── The Magic: CSS Grid Overlap ── */
+.hero {
+  display: grid;
+  /* Creates one giant cell named "stack" that fills the section */
+  grid-template-areas: "stack";
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  --ticker-h: 60px;
+}
+
+/* Place EVERY layer into the exact same grid cell so they stack on top of each other naturally */
+.hero-name-bg,
+.hero-portrait,
+.hero-anchor--left,
+.hero-anchor--right,
+.hero-scroll-wrap,
+.ticker-wrap {
+  grid-area: stack;
+}
+
+/* ── Layer 1: Giant Text ── */
+.hero-name-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 1. Locks it perfectly in the center left-to-right */
+  justify-self: center;
+
+  /* 2. Starts it in the center vertically... */
+  align-self: center;
+
+  /* 3. ...and PULLS it up towards the top! 
+     (Make this more negative, like -25vh, to slide it even higher) */
+  margin-top: -15vh;
+
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+.hero-name-line-novy {
+  color: var(--accent-pink);
+  text-align: center;
+  font-family: var(--font-hero-name);
+  font-size: 10.5vw;
+  letter-spacing: 0.01em;
+  line-height: 0.3;
+  margin-bottom: 0.7vw;
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-name-line {
+  color: var(--accent-pink);
+  text-align: center;
+  font-family: var(--font-hero-name);
+  /* Scaled slightly down so it stays comfortably inside the screen boundaries */
+  font-size: 21vw;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  display: block;
+  white-space: nowrap;
+  will-change: transform, opacity;
+}
+
+/* ── Layer 2: Portrait ── */
+.hero-portrait {
+  /* 1. Locks it perfectly in the center left-to-right */
+  justify-self: center;
+
+  /* 2. Anchors it to the bottom axis... */
+  align-self: end;
+
+  /* 3. ...and PUSHES it higher up the screen! 
+     (Increase this number, like 10vh, to push your portrait higher) */
+  margin-bottom: -7vh;
+
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  /* Note: If pushing it up makes your head hit the top of the browser, 
+     just lower this height slightly to 90vh or 85vh */
+  height: 95vh;
+
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.hero-portrait img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transform: rotate(-2.95deg);
+}
+
+/* ── Layer 3 & 4: Left & Right Anchors ── */
+.hero-anchor--left {
+  justify-self: start;
+  align-self: end;
+  /* Shifted lower to sit directly under the hero letters */
+  margin-bottom: 20vh;
+  margin-left: clamp(1.5rem, -3vw, 6rem);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  will-change: transform, opacity;
+}
+
+.hero-anchor--right {
+  justify-self: end;
+  align-self: end;
+  /* Matched to left side */
+  margin-bottom: 21vh;
+  margin-right: clamp(1.5rem, 3vw, 6rem);
+  text-align: right;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  will-change: transform, opacity;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(1.4rem, 1.4vw, 1.4rem);
+  color: var(--accent-lime);
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.35rem; /* Sits right beneath tagline */
+}
+
+.social-links a img {
+  width: clamp(24px, 2.2vw, 30px);
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: translateY(-3px);
+}
+
+.hero-role {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(1.5rem, 1.4vw, 1.4rem);
+  color: var(--accent-lime);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.hero-availability {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(0.4rem, 0.9vw, 0.65rem);
+  color: var(--text-cream);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Layer 5: Scroll CTA Pill (Bottom Center) ── */
+.hero-scroll-wrap {
+  justify-self: center;
+  align-self: end;
+  /* Tucked lower to sit exactly at the bottom of the portrait */
+  margin-bottom: calc(var(--ticker-h) + 1.5vh);
+  z-index: 65;
+  will-change: transform, opacity;
+}
+
+/* ── Layer 5: Scroll CTA Pill (Glassmorphism Effect) ── */
+.hero-scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(0.65rem, 0.78vw, 0.6rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  /* 1. Text color (Cream looks incredibly clean on glass) */
+  color: #fafdea;
+
+  /* 2. The Glass Effect: Sheer white tint + background blur */
+  background: #a0a0a026;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Required for Safari */
+
+  /* 3. A very faint, semi-transparent border to give the glass an "edge" */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* 4. A soft drop shadow to separate the glass from your dark shirt */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  border-radius: 9999px;
+  padding: 0.5rem 1.6rem;
+  white-space: nowrap;
+  text-decoration: shadow;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover State */
+.hero-scroll-btn:hover {
+  /* Becomes slightly more opaque and the border brightens when hovered */
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--accent-lime); /* Text lights up lime (or change to pink!) */
+}
+
+/* ── Layer 6: Tech Stack Carousel (Absolute Bottom Edge) ── */
+.ticker-wrap {
+  grid-area: stack;
+  align-self: end;
+  justify-self: stretch;
+  width: 100%;
+  height: var(--ticker-h, 60px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  user-select: none;
+  background-color: transparent;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem;
+  flex-shrink: 0;
+}
+
+.ticker-item img {
+  height: 28px;
+  width: auto;
+  max-width: 36px;
+  object-fit: contain;
+  background: transparent;
+  filter: brightness(0) invert(98%) sepia(8%) saturate(350%) hue-rotate(25deg)
+    brightness(102%) contrast(97%);
+  opacity: 0.85;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ticker-item img:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-item span {
+  display: none;
+}
+
+/* NOTE: The .ticker-wrap::before and .ticker-wrap::after fade gradients 
+   have been entirely deleted so the carousel flows seamlessly edge-to-edge! */
+
+/* ==========================================================================
+   TABLET & IPAD ADJUSTMENTS (Screens 1024px and smaller)
+========================================================================== */
+@media (max-width: 1024px) {
+  /* 1. Scale down the giant text */
+  .hero-name-line-novy {
+    font-size: 8vw; /* Down from 10.5vw */
+    margin-bottom: -1vw;
+  }
+
+  .hero-name-line {
+    font-size: 15vw; /* Down from 19.5vw/21vw */
+  }
+
+  /* 2. Nudge the text block so it sits comfortably */
+  .hero-name-bg {
+    margin-top: -12vh;
+  }
+
+  /* 3. Resize the portrait so it doesn't take over the whole screen */
+  .hero-portrait {
+    height: 75vh; /* Shrunk down slightly to balance the iPad screen */
+    margin-bottom: 2vh;
+  }
+
+  /* 4. Lift the side anchors a bit higher so they don't hit the bottom edge */
+  .hero-anchor--left,
+  .hero-anchor--right {
+    margin-bottom: 12vh;
+  }
+
+  /* ==========================================================================
+   MOBILE & PHONE ADJUSTMENTS (Screens 768px and smaller)
+========================================================================== */
+  @media (max-width: 768px) {
+    /* 1. Scale text UP in vw so it spans the narrow screen */
+    .hero-name-bg {
+      margin-top: -10vh;
+    }
+
+    .hero-name-line-novy {
+      font-size: 16vw;
+      margin-bottom: -1vw;
+    }
+
+    .hero-name-line {
+      font-size: 26vw;
+    }
+
+    /* 2. Shrink portrait so it doesn't overwhelm the tiny screen */
+    .hero-portrait {
+      height: 55vh;
+      margin-bottom: 6vh;
+    }
+
+    /* 3. STAGGER THE ANCHORS: Push the left side higher than the right */
+    .hero-anchor--left {
+      margin-left: 1.25rem;
+      margin-bottom: 22vh; /* Lifted higher */
+      gap: 0.4rem;
+    }
+
+    .hero-anchor--right {
+      margin-right: 1.25rem;
+      margin-bottom: 11vh; /* Kept lower */
+      gap: 0.4rem;
+    }
+
+    /* 4. Shrink the supporting typography */
+    .hero-tagline,
+    .hero-role {
+      font-size: 0.85rem;
+    }
+
+    .hero-availability {
+      font-size: 0.65rem;
+    }
+
+    .social-links a img {
+      width: 22px;
+    }
+
+    /* 5. Tweak the scroll button */
+    .hero-scroll-btn {
+      padding: 0.4rem 1.2rem;
+      font-size: 0.6rem;
+    }
+  }
+}

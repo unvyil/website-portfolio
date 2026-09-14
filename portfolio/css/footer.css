@@ -1,0 +1,21 @@
+/* ==========================================================================
+   FOOTER
+   Cream-background bottom bar with copyright text.
+========================================================================== */
+.footer-bar {
+  width: 100%;
+  background-color: var(--text-cream, #FAFDEA);
+  color: #5e5e5ec9;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 0;
+}
+
+.footer-content p {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.15vw, 1.2rem);
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #5e5e5ec9;
+}

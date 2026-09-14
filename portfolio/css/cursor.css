@@ -1,0 +1,21 @@
+/* ==========================================================================
+   CURSOR EFFECT
+   Stained-glass particle trail canvas overlay.
+   JavaScript logic is in js/cursor.js
+========================================================================== */
+.stained-glass-cursor {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+}
+
+/* Hide default system cursor on interactive elements */
+a, button, .project-card, .tech-card, .submit-btn, .btn-view-all {
+  cursor: none;
+}

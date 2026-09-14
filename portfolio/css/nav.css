@@ -1,0 +1,45 @@
+/* ==========================================================================
+   NAVIGATION
+   Fixed top navigation bar with glassmorphism fade effect.
+========================================================================== */
+nav {
+  font-family: var(--font-body);
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0.85) 0%, rgba(23, 23, 23, 0.4) 50%, transparent 100%) !important;
+  border-bottom: none;
+  z-index: 1200;
+  padding: 1.3rem 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(2rem, 4.5vw, 4.5rem);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--text-cream);
+  transition: color 0.4s ease-in-out;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-pink);
+}

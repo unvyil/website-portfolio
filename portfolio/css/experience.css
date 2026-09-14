@@ -1,0 +1,117 @@
+/* ==========================================================================
+   WORK EXPERIENCE TIMELINE
+   Vertical timeline with badge years, company headers, and descriptions.
+========================================================================== */
+.experience-container {
+  margin-bottom: 0;
+}
+
+.experience-heading {
+  margin-bottom: 2.8rem;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 0;
+  max-width: 1200px;
+  padding-bottom: 0;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: 25px;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--accent-pink);
+  transform: translateX(-50%);
+}
+
+.timeline-cap {
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+  width: 36px;
+  height: 4px;
+  background-color: var(--accent-pink);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.8rem, 3.5vw, 3.5rem);
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  position: relative;
+}
+
+.timeline-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.timeline-badge-wrap {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-badge {
+  background-color: var(--bg-dark);
+  border: 3.5px solid var(--accent-lime);
+  color: var(--accent-lime);
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  padding: 0.4rem 1.25rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(219, 255, 73, 0.15);
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 0.2rem;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-cream);
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.timeline-company {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+}
+
+.timeline-duration {
+  text-transform: uppercase;
+}
+
+.timeline-position {
+  font-family: var(--font-display);
+  font-weight: bold;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  color: var(--text-cream);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0.35rem 0 0.85rem 0;
+}
+
+.timeline-desc {
+  color: #FAFDEA;
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  line-height: 1.7;
+  max-width: 1050px;
+}

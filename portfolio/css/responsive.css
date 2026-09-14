@@ -1,0 +1,126 @@
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   All media queries consolidated in one place for easy maintenance.
+   Ordered largest → smallest breakpoint.
+========================================================================== */
+
+/* ── 1200px and below ─────────────────────────────────────────────────── */
+@media screen and (max-width: 1200px) {
+  .tech-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ── 960px and below ──────────────────────────────────────────────────── */
+@media screen and (max-width: 960px) {
+  .hero-name-line {
+    font-size: clamp(20vw, 26vw, 30vw);
+  }
+
+  .hero-portrait img {
+    height: clamp(280px, 50vh, 480px);
+  }
+
+  .hero-anchor {
+    bottom: calc(var(--ticker-h) + 1.6rem);
+  }
+
+  .hero-anchor--left  { left:  1.2rem; }
+  .hero-anchor--right { right: 1.2rem; }
+
+  .hero-scroll-wrap {
+    bottom: calc(var(--ticker-h) + 0.85rem);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── 768px and below ──────────────────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    gap: 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-name-line {
+    font-size: clamp(22vw, 28vw, 34vw);
+  }
+
+  .hero-anchor--left {
+    left: 1rem;
+    bottom: calc(var(--ticker-h) + 1.2rem);
+  }
+
+  .hero-anchor--right {
+    right: 1rem;
+    bottom: calc(var(--ticker-h) + 1.2rem);
+  }
+
+  .hero-tagline  { font-size: 0.78rem; }
+  .hero-role     { font-size: 0.82rem; }
+  .hero-availability { font-size: 0.6rem; }
+
+  .ticker-wrap {
+    height: 48px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .experience-timeline::before { left: 40px; }
+  .timeline-cap                { left: 40px; }
+
+  .timeline-row         { gap: 1.5rem; }
+  .timeline-badge-wrap  { width: 80px; }
+
+  .timeline-badge {
+    font-size: 1.1rem;
+    padding: 0.35rem 0.9rem;
+    border-width: 3px;
+  }
+
+  .timeline-position { font-size: 1.5rem; }
+
+  .footer-content { text-align: center; }
+}
+
+/* ── 480px and below ──────────────────────────────────────────────────── */
+@media screen and (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-name-line {
+    font-size: clamp(24vw, 30vw, 38vw);
+  }
+
+  .hero-anchor--left {
+    left: 0.8rem;
+    bottom: calc(var(--ticker-h) + 1rem);
+  }
+
+  .hero-anchor--right {
+    right: 0.8rem;
+    bottom: calc(var(--ticker-h) + 1rem);
+  }
+
+  .hero-scroll-btn {
+    font-size: 0.62rem;
+    padding: 0.45rem 1.2rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+}

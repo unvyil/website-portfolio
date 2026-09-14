@@ -1,0 +1,95 @@
+/* ==========================================================================
+   CONTACT SECTION
+   Underline-style form inputs and cream submit button.
+========================================================================== */
+.contact-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: normal;
+  color: var(--accent-lime);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-container {
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  color: var(--text-cream);
+  font-weight: normal;
+}
+
+.form-group label .asterisk {
+  color: var(--accent-pink);
+  margin-left: 2px;
+}
+
+.form-underline-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(250, 253, 234, 0.4);
+  color: var(--text-cream);
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+  padding: 0.7rem 0;
+  outline: none;
+  transition: border-bottom-color 0.5s ease-in-out;
+}
+
+.form-underline-input:focus {
+  border-bottom-color: var(--accent-lime);
+}
+
+textarea.form-underline-input {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  font-family: var(--font-body);
+  background-color: var(--text-cream);
+  color: var(--accent-pink);
+  font-size: clamp(1.15rem, 1.35vw, 1.3rem);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 3.6rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-lime);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(219, 255, 73, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   SCROLL BACK TO TOP BUTTON
+   Fixed floating pink circle that appears after scrolling 350px.
+   JavaScript logic is in js/scroll-top.js
+========================================================================== */
+.scroll-top {
+  position: fixed;
+  right: clamp(1.5rem, 3vw, 2.5rem);
+  bottom: clamp(1.5rem, 3vw, 2.5rem);
+  width: clamp(44px, 3.5vw, 54px);
+  height: clamp(44px, 3.5vw, 54px);
+  border-radius: 50%;
+  background-color: var(--accent-pink);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+              background-color 0.4s ease-in-out;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top i {
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+}
+
+.scroll-top:hover {
+  background-color: var(--accent-lime);
+  color: var(--bg-dark);
+  transform: translateY(-3px);
+}
