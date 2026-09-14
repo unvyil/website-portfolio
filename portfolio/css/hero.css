@@ -305,91 +305,78 @@
    have been entirely deleted so the carousel flows seamlessly edge-to-edge! */
 
 /* ==========================================================================
-   TABLET & IPAD ADJUSTMENTS (Screens 1024px and smaller)
+   TABLET & IPAD (Mimicking Desktop Proportions)
 ========================================================================== */
-@media (max-width: 1024px) {
-  /* 1. Scale down the giant text */
+@media (max-width: 1180px) {
+  /* 1. Aggressively shrink text to restore negative space on the sides */
   .hero-name-line-novy {
-    font-size: 8vw; /* Down from 10.5vw */
+    font-size: 6.5vw;
     margin-bottom: -1vw;
   }
 
   .hero-name-line {
-    font-size: 15vw; /* Down from 19.5vw/21vw */
+    font-size: 12vw;
   }
 
-  /* 2. Nudge the text block so it sits comfortably */
+  /* 2. Re-center the background text */
   .hero-name-bg {
-    margin-top: -12vh;
+    margin-top: -8vh;
   }
 
-  /* 3. Resize the portrait so it doesn't take over the whole screen */
+  /* 3. Scale portrait to match the new text size */
   .hero-portrait {
-    height: 75vh; /* Shrunk down slightly to balance the iPad screen */
+    height: 70vh;
     margin-bottom: 2vh;
   }
 
-  /* 4. Lift the side anchors a bit higher so they don't hit the bottom edge */
+  /* 4. Keep the side text leveled and visible */
   .hero-anchor--left,
   .hero-anchor--right {
-    margin-bottom: 12vh;
+    margin-bottom: 10vh;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & PHONE (Clean & Symmetrical)
+========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Keep giant text readable but contained */
+  .hero-name-line-novy {
+    font-size: 10vw;
   }
 
-  /* ==========================================================================
-   MOBILE & PHONE ADJUSTMENTS (Screens 768px and smaller)
-========================================================================== */
-  @media (max-width: 768px) {
-    /* 1. Scale text UP in vw so it spans the narrow screen */
-    .hero-name-bg {
-      margin-top: -10vh;
-    }
+  .hero-name-line {
+    font-size: 18vw;
+  }
 
-    .hero-name-line-novy {
-      font-size: 16vw;
-      margin-bottom: -1vw;
-    }
+  /* 2. Shrink portrait to prevent overlapping */
+  .hero-portrait {
+    height: 50vh;
+    margin-bottom: 8vh;
+  }
 
-    .hero-name-line {
-      font-size: 26vw;
-    }
+  /* 3. Keep side anchors symmetrical and push them closer to the edges */
+  .hero-anchor--left {
+    margin-left: 1rem;
+    margin-bottom: 15vh;
+  }
 
-    /* 2. Shrink portrait so it doesn't overwhelm the tiny screen */
-    .hero-portrait {
-      height: 55vh;
-      margin-bottom: 6vh;
-    }
+  .hero-anchor--right {
+    margin-right: 1rem;
+    margin-bottom: 15vh;
+  }
 
-    /* 3. STAGGER THE ANCHORS: Push the left side higher than the right */
-    .hero-anchor--left {
-      margin-left: 1.25rem;
-      margin-bottom: 22vh; /* Lifted higher */
-      gap: 0.4rem;
-    }
+  /* 4. Miniaturize the typography */
+  .hero-tagline,
+  .hero-role {
+    font-size: 0.65rem;
+  }
 
-    .hero-anchor--right {
-      margin-right: 1.25rem;
-      margin-bottom: 11vh; /* Kept lower */
-      gap: 0.4rem;
-    }
+  .hero-availability {
+    font-size: 0.55rem;
+  }
 
-    /* 4. Shrink the supporting typography */
-    .hero-tagline,
-    .hero-role {
-      font-size: 0.85rem;
-    }
-
-    .hero-availability {
-      font-size: 0.65rem;
-    }
-
-    .social-links a img {
-      width: 22px;
-    }
-
-    /* 5. Tweak the scroll button */
-    .hero-scroll-btn {
-      padding: 0.4rem 1.2rem;
-      font-size: 0.6rem;
-    }
+  .social-links a img {
+    width: 18px;
   }
 }
